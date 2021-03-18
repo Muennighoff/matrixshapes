@@ -13,7 +13,7 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-def generate_json(num=1000, cont=0.5):
+def generate_json(num=500, cont=0.5):
     """
     Generates json files with examples
     args:
