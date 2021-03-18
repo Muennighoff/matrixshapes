@@ -97,7 +97,6 @@ def generate(shape_start=None, num_ops=0, dim_max=10):
     # Keep track of shapes that are print out for confounders
     shapes = [shape_start]
 
-    print(shape_start)
     a = np.random.randint(0, dim_max, shape_start)
 
     # Generate first operation & select its subdict
@@ -156,4 +155,6 @@ if __name__ == '__main__':
   
     # Notes:
     # If you use too many operations it may well crash due to the kronecker product
-    generate(num_ops=5)
+    out = generate(num_ops=5)
+    
+    print(out)
