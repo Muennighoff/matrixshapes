@@ -20,7 +20,7 @@ def generate_json(num=1000, cont=0.5):
       num: number of examples
       cont: how many of the examples are allowed to contain the label (i.e. the output matrix shape) in their string
     """
-    max_cont = int(num * contained_rate)
+    max_cont = int(num * cont)
     cur_cont = 0
 
     data = {}
