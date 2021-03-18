@@ -1,5 +1,6 @@
 import json
 import argparse
+import random
 
 from generate import generate
 
@@ -13,7 +14,7 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-def generate_json(num=500, cont=0.5):
+def generate_json(num=1000, cont=0.5):
     """
     Generates json files with examples
     args:
@@ -36,6 +37,9 @@ def generate_json(num=500, cont=0.5):
         cur_cont += 1
 
       data["examples"].append({"input": input, "target": target})
+    
+    # Shuffle to avoid having harder examples at the end due to skipping
+    random.shuffle(data["examples"])
 
     with open('task.json', 'w') as outfile:
         json.dump(data, outfile, indent=2)
