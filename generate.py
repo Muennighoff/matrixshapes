@@ -77,12 +77,12 @@ ops = {
     "sum_axis": {"func": np.sum, "gen_b": sum_axis_b, "string_beg": "Take a matrix of shape {} and sum over the {} axis.", "string_mid": "Sum the result over the {} axis."}
 }
 
-def generate(shape_start=None, num_ops=0, dim_max=10):
+def generate(shape_start=None, num_ops=None, dim_max=10):
     """
     Generates an input example for the matrixshapes language task
     args: 
       shape_start: Tuple of starter shape, e.g. (1, 2)
-      num_operations: int of how many operations to apply
+      num_ops: int of how many operations to apply
       dim_max: Maximum value of a dimension
     returns:
       input: string representing the model input
@@ -93,6 +93,8 @@ def generate(shape_start=None, num_ops=0, dim_max=10):
 
     if shape_start is None:
       shape_start = random_a_shape()
+    if num_ops is None:
+      num_ops = random.randint(0,10)
 
     # Keep track of shapes that are print out for confounders
     shapes = [shape_start]
@@ -154,7 +156,7 @@ def generate(shape_start=None, num_ops=0, dim_max=10):
 if __name__ == '__main__':
   
     # Notes:
-    # If you use too many operations it may well crash due to the kronecker product
-    out = generate(num_ops=5)
+    # If you use too many operations it may well crash due to the kronecker product; The default is 1-10
+    out = generate()
     
     print(out)
