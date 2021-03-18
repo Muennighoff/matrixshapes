@@ -16,7 +16,7 @@ def random_a_shape(dims_max=4):
   shape_a = np.random.randint(2, dims_max, dims)
   return tuple(shape_a)
 
-def multiply_b(shape_a, dim_max=10):
+def multiply_b(shape_a, dim_max=5):
   """
   Generates compatible matrix b to muliply given shape of a 
   args:
@@ -32,20 +32,20 @@ def multiply_b(shape_a, dim_max=10):
   shape_b[-2] = shape_a[-1]
   shape_b[-1] = last_axis
 
-  return np.random.randint(0, 10, shape_b)
+  return np.random.randint(0, 5, shape_b)
 
 def same_b(shape_a):
   """
   Generates compatible matrix b for e.g. hadamard product given shape of a 
   """
-  return np.random.randint(0, 10, shape_a)
+  return np.random.randint(0, 5, shape_a)
 
-def kron_b(shape_a, dim_max=10):
+def kron_b(shape_a, dim_max=5):
   """
   Generates compatible matrix b for kronecker product given shape of a 
   """
   shape_b = np.random.randint(2, dim_max, len(shape_a))
-  return np.random.randint(0, 10, shape_b)
+  return np.random.randint(0, 5, shape_b)
 
 def sum_axis_b(shape_a):
   """
@@ -77,7 +77,7 @@ ops = {
     "sum_axis": {"func": np.sum, "gen_b": sum_axis_b, "string_beg": "Take a matrix of shape {} and sum over the {} axis.", "string_mid": "Sum the result over the {} axis."}
 }
 
-def generate(shape_start=None, num_ops=5, dim_max=10, dims_max=4):
+def generate(shape_start=None, num_ops=5, dim_max=5, dims_max=4):
     """
     Generates an input example for the matrixshapes language task
     args: 
