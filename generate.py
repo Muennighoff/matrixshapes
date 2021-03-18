@@ -94,7 +94,7 @@ def generate(shape_start=None, num_ops=None, dim_max=10):
     if shape_start is None:
       shape_start = random_a_shape()
     if num_ops is None:
-      num_ops = random.randint(0,10)
+      num_ops = random.randint(0,5)
 
     # Keep track of shapes that are print out for confounders
     shapes = [shape_start]
