@@ -114,7 +114,7 @@ def generate(shape_start=None, num_ops=0, dim_max=10):
       
       # Add to input string
       if op_beg["gen_b"] == sum_axis_b:
-        input += op_beg["string_mid"].format(str(shape_start).replace(" ", ""), num_to_axis[b])
+        input += op_beg["string_beg"].format(str(shape_start).replace(" ", ""), num_to_axis[b])
       else:
         input += op_beg["string_beg"].format(str(shape_start).replace(" ", ""), str(b.shape).replace(" ", ""))
         shapes.append(b.shape)
