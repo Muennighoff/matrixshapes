@@ -11,3 +11,12 @@ To create a json dataset run `python create_json.py --num 1000 --cont 0.5` for 1
 <br> <br>
 See the task.json for a dataset with num 5000, cont 0.5 & default values for generate.
 
+```
+@misc{matrixshapes,
+  author = {Muennighoff, Niklas},
+  title = {{Keeping track of matrix shapes after transformations}},
+  howpublished = {\url{https://github.com/Muennighoff/matrixshapes}},
+  year = 2021,
+  month = February
+}
+```
