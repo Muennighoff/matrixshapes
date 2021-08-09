@@ -11,6 +11,8 @@ To create a json dataset run `python create_json.py --num 1000 --cont 0.5` for 1
 <br> <br>
 See the task.json for a dataset with num 5000, cont 0.5 & default values for generate.
 
+This task is part of Google's BIG-Bench, see [here](https://github.com/google/BIG-bench/tree/main/bigbench/benchmark_tasks/matrixshapes)
+
 ```
 @misc{matrixshapes,
   author = {Muennighoff, Niklas},
